@@ -24,16 +24,24 @@ const formSchema = z.object({
   country: z.string().min(1, "Kraj jest wymagany"),
 });
 
-type UserFormData = z.infer<typeof formSchema>; //automatically determine the type based on the form schema
+export type UserFormData = z.infer<typeof formSchema>; //automatically determine the type based on the form schema
 
 type Props = {
   //thanks to this we can do all the API stuff on the page level
   onSave: (userProfileData: UserFormData) => void;
   currentUser: User;
   isLoading: boolean;
+  title?: string;
+  buttonText?: string;
 };
 
-const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
+const UserProfileForm = ({
+  onSave,
+  isLoading,
+  currentUser,
+  title = "Twoje konto",
+  buttonText = "Zapisz",
+}: Props) => {
   const form = useForm<UserFormData>({
     resolver: zodResolver(formSchema), //handling validation etc.
     defaultValues: currentUser,
@@ -50,7 +58,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
         className="space-y-4 bg-green-100 rounded-lg md:p-10"
       >
         <div>
-          <h2 className="text-2xl font-bold">Konto</h2>
+          <h2 className="text-2xl font-bold">{title}</h2>
           <FormDescription>
             Sprawdź i zmień informacje dotyczące Twojego konta
           </FormDescription>
@@ -126,7 +134,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
           <LoadingButton />
         ) : (
           <Button type="submit" className="bg-green-500">
-            Zapisz
+            {buttonText}
           </Button>
         )}
       </form>

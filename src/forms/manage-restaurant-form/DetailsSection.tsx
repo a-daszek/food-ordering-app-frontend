@@ -14,7 +14,9 @@ const DetailsSection = () => {
   return (
     <div className="space-y-2">
       <div>
-        <h2 className="text-2xl font-bold">Szczegóły</h2>
+        <h2 className="text-2xl font-bold">
+          Masz własną restaurację? Dodaj ją do naszej strony!
+        </h2>
         <FormDescription>Dodaj informacje o Twojej restauracji</FormDescription>
       </div>
       <FormField

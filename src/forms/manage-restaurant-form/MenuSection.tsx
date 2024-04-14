@@ -15,7 +15,9 @@ const MenuSection = () => {
     <div className="space-y-2">
       <div>
         <h2 className="text-2xl font-bold">Menu</h2>
-        <FormDescription>Stwórz swoje menu</FormDescription>
+        <FormDescription>
+          Dodaj pozycje z menu Twojej restauracji
+        </FormDescription>
       </div>
       <FormField
         control={control}

@@ -91,7 +91,7 @@ const SearchPage = () => {
           searchQuery={searchState.searchQuery} //we pass the searchQuery to this component because we want to persist the value that the user typed between each render/
           //just making sure that we pass the new value so that the component can display it
           onSubmit={setSearchQuery}
-          placeHolder="Szukaj według miasta lub ulubionego dania"
+          placeHolder="Szukaj według ulubionego dania"
           onReset={resetSearch}
         />
         <div className="flex justify-between flex-col gap-3 lg:flex-row">

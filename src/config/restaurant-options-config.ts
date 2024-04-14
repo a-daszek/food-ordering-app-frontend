@@ -17,6 +17,7 @@ export const cuisineList = [
   "Niemiecka",
   "Organiczna",
   "Owoce morza",
+  "Polska",
   "Portugalska",
   "Pizza",
   "Rosyjska",
@@ -32,4 +33,5 @@ export const cuisineList = [
   "Wegańska",
   "Wegetariańska",
   "Włoska",
+  "Zupy",
 ];
